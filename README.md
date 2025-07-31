@@ -62,7 +62,7 @@ Through this project, I:
 ### 🛠️ Installation
 
 ```bash
-git clone https://github.com/yourusername/book-exchange-hub.git
+git clone https://github.com/08SAI/Book_Exchange_Hub.git
 cd book-exchange-hub
 npm install
 ng serve
