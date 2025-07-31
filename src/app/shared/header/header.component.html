@@ -1,7 +1,7 @@
 <header class="header">
             <span (click)="navigateToHome()" class="flex items-center sm:mb-0 text-decoration-none cursor-pointer">
                 <img src="../../assets/app-logo.svg" class="h-8 mr-3" alt="Flowbite Logo" />
-                <span class="self-center text-2xl font-semibold whitespace-nowrap">Book Barter Platform</span>
+                <span class="self-center text-2xl font-semibold whitespace-nowrap">Book Exchange Hub</span>
             </span>
             <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-600 sm:mb-0">
                 <li>
@@ -10,21 +10,26 @@
                 <li>
                     <a href="/about" class="mr-4 hover:underline md:mr-6 ">About</a>
                 </li>
-                <li>
-                    <a href="/contact" class="hover:underline">Contact</a>
-                </li>
                 <div class="avatar-container">
-                    <div class="avatar" (click)="toggleDropdown()">
+                    <div class="avatar" (click)="toggleDropdown()" [ngClass]="{'active': dropdownVisible}">
                         <span>{{ avatar }}</span>
                     </div>
 
                     <!-- Dropdown Menu -->
                     <div class="dropdown" *ngIf="dropdownVisible" (click)="preventClose($event)">
+                        <div class="dropdown-user-info">
+                            <div class="dropdown-avatar-circle">{{ avatar }}</div>
+                            <div class="dropdown-user-details">
+                                <div class="dropdown-user-name">{{ user?.firstName }} {{ user?.lastName }}</div>
+                                <div class="dropdown-user-email">{{ user?.email }}</div>
+                            </div>
+                        </div>
                         <ul>
-                            <li><a>Profile</a></li>
-                            <li (click)="onLogOut()"><a >Log Out</a></li>
+                            <li (click)="openProfile()"><a>View Profile</a></li>
+                            <li (click)="openSettings()"><a>Settings</a></li>
+                            <li (click)="openMyBooks()"><a>My Books</a></li>
+                            <li (click)="onLogOut()"><a>Log Out</a></li>
                         </ul>
                     </div>
                 </div>
             </ul>
-</header>

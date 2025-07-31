@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthServiceService } from 'src/app/auth/services/auth-service.service';
 
@@ -27,10 +27,10 @@ export class HeaderComponent {
     this.dropdownVisible = !this.dropdownVisible;
   }
 
-  onClick(event: MouseEvent): void {
-    const clickedInside = event.target instanceof HTMLElement &&
-      (event.target.closest('.avatar') || event.target.closest('.dropdown'));
-    if (!clickedInside) {
+  @HostListener('document:click', ['$event'])
+  handleDocumentClick(event: MouseEvent): void {
+    const target = event.target as HTMLElement;
+    if (!target.closest('.avatar-container')) {
       this.dropdownVisible = false;
     }
   }
@@ -46,6 +46,18 @@ export class HeaderComponent {
   onLogOut(): void{
     this.authService.removeToken();
     this.router.navigate(['/login']);
+  }
+
+  openProfile(): void {
+    this.router.navigate(['/profile']);
+  }
+
+  openSettings(): void {
+    this.router.navigate(['/settings']);
+  }
+
+  openMyBooks(): void {
+    this.router.navigate(['/my-books']);
   }
   
 }

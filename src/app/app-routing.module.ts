@@ -6,6 +6,10 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AuthGuard } from './auth.guard';
 import { AddBookComponent } from './add-book/add-book.component';
+import { AboutComponent } from './about/about.component';
+import { ProfileComponent } from './profile/profile.component';
+import { SettingsComponent } from './settings/settings.component';
+import { MyBooksComponent } from './my-books/my-books.component';
 
 const routes: Routes = [
   {
@@ -21,6 +25,9 @@ const routes: Routes = [
     path: 'reset-password', component: ResetPasswordComponent
   },
   {
+    path: 'about', component: AboutComponent
+  },
+  {
     path: 'home', component: LandingPageComponent, canActivate: [AuthGuard]
   },
   {
@@ -32,6 +39,9 @@ const routes: Routes = [
   {
     path: 'edit-book/:id', component: AddBookComponent, canActivate: [AuthGuard]
   },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'settings', component: SettingsComponent },
+  { path: 'my-books', component: MyBooksComponent },
 
 ];
 

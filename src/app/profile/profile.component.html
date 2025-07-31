@@ -1,0 +1,7 @@
+<div class="profile-page">
+  <h2>Profile</h2>
+  <p><strong>Name:</strong> {{ user?.firstName }} {{ user?.lastName }}</p>
+  <p><strong>Email:</strong> {{ user?.email }}</p>
+  <p *ngIf="user?.phone"><strong>Phone:</strong> {{ user.phone }}</p>
+  <p *ngIf="user?.joinDate"><strong>Joined:</strong> {{ user.joinDate | date:'mediumDate' }}</p>
+</div>

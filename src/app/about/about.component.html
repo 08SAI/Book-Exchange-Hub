@@ -1,0 +1,112 @@
+<div class="landing-page-container">
+  <app-header></app-header>
+  <div class="landing-page-body">
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1>About Book Exchange Platform</h1>
+        <p class="subtitle">Connecting readers, sharing stories, building community</p>
+      </div>
+    </section>
+
+    <section class="mission-section">
+      <div class="container">
+        <h2>{{ mission.title }}</h2>
+        <p>{{ mission.description }}</p>
+      </div>
+    </section>
+
+    <section class="features-section">
+      <div class="container">
+        <h2>What We Offer</h2>
+        <div class="features-grid">
+          <div class="feature-card" *ngFor="let feature of features">
+            <i class="fas {{ feature.icon }}"></i>
+            <h3>{{ feature.title }}</h3>
+            <p>{{ feature.description }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contributors-section">
+      <div class="container">
+        <h2>Our Team</h2>
+        <div class="contributors-grid">
+          <div class="contributor-card" *ngFor="let contributor of contributors">
+            <div class="contributor-avatar">
+              <span>{{ contributor.name.charAt(0) }}</span>
+            </div>
+            <h3>{{ contributor.name }}</h3>
+            <p class="role">{{ contributor.role }}</p>
+            <p class="description">{{ contributor.description }}</p>
+            <div class="social-links">
+              <a [href]="contributor.social.linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
+              <a [href]="contributor.social.github" target="_blank"><i class="fab fa-github"></i></a>
+              <a [href]="'mailto:' + contributor.social.email"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="join-section">
+      <div class="container">
+        <h2>Join Our Community</h2>
+        <p>Start your journey of sharing and discovering books today. Create an account and become part of our growing community of book lovers.</p>
+        <button class="join-button" routerLink="/register">Get Started</button>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <i class="fas fa-envelope"></i>
+            <h3>Email</h3>
+            <p>{{ contactInfo.email }}</p>
+          </div>
+          <div class="contact-card">
+            <i class="fas fa-phone"></i>
+            <h3>Phone</h3>
+            <p>{{ contactInfo.phone }}</p>
+          </div>
+          <div class="contact-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Address</h3>
+            <p>{{ contactInfo.address }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Book Exchange Platform</h3>
+            <p>Connecting readers worldwide through the joy of sharing books.</p>
+            <div class="social-links">
+              <a [href]="contactInfo.social.facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+              <a [href]="contactInfo.social.twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+              <a [href]="contactInfo.social.instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-section" *ngFor="let section of footerLinks">
+            <h3>{{ section.title }}</h3>
+            <ul>
+              <li *ngFor="let link of section.links">
+                <a [routerLink]="link.path">{{ link.name }}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2024 Book Exchange Platform. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div> 

@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DatePipe } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +20,10 @@ import { PaginationComponent } from './shared/pagination/pagination.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { HeaderComponent } from './shared/header/header.component';
 import { AddBookComponent } from './add-book/add-book.component';
+import { AboutComponent } from './about/about.component';
+import { ProfileComponent } from './profile/profile.component';
+import { SettingsComponent } from './settings/settings.component';
+import { MyBooksComponent } from './my-books/my-books.component';
 
 import { AuthInterceptor } from './auth/interceptors/auth.interceptor';
 import { ConfirmModalComponent } from './shared/confirm-modal/confirm-modal.component';
@@ -38,6 +43,10 @@ import { ConfirmModalComponent } from './shared/confirm-modal/confirm-modal.comp
     HeaderComponent,
     AddBookComponent,
     ConfirmModalComponent,
+    AboutComponent,
+    ProfileComponent,
+    SettingsComponent,
+    MyBooksComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +63,8 @@ import { ConfirmModalComponent } from './shared/confirm-modal/confirm-modal.comp
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true  // Allow multiple interceptors to be applied
-    }
+    },
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })

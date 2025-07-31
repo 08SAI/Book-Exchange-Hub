@@ -19,6 +19,7 @@ export class AuthServiceService {
   // Example method to remove token (log out logic)
   removeToken(): void {
     localStorage.removeItem('authToken');
+    localStorage.removeItem('user');
   }
 
   getToken(){
