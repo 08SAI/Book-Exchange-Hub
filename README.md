@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Book Barter Platform - Frontend Angular Application
 
 This is a frontend application developed in Angular, Book Exchange Platform - A platform for the users to exchange the books they have and wish to have.
@@ -124,3 +125,6 @@ cd book-exchange-hub
 npm install
 ng serve
 >>>>>>> d68ee8f1d854efa95d74757b6d1afa9026956f7e
+=======
+# Book-Exchange-Hub
+>>>>>>> 6d0b8cd6e1d550ecb9e30c5e4426887a927705a0
